@@ -24,7 +24,7 @@ extra functionality for admins
 
 # Technical details
 
-## Сhanges in the database compared to the first stage
+### Сhanges in the database compared to the first stage
 
 1) Adding column status to table users for handling bot events.
 2) Deleting column levelName from table languages due to useless in bot.
@@ -32,7 +32,7 @@ extra functionality for admins
 4) Adding new functions to simplify work with the database.
 5) Adding enums instead of some functions.
 
-## Bot working mode
+### Bot working mode
 
 We host our bot on heroku.com as web dyno, so:
 - if Bot receives no web traffic in a 30-minute period, it will go into sleep mode
@@ -41,20 +41,20 @@ We host our bot on heroku.com as web dyno, so:
 
 # How To Use
 
-## How to test existing bot
+### How to test existing bot
 
 1) Accept our invitation to test the bot (works only from browser version of Facebook).
 2) Write to Language Club page from Facebook Messanger on your phone.
 
-## How to independently build a project from sources
+### How to independently build a project from sources
 
-### Requirements:
+##### Requirements
 
 1) Facebook Developer Account
 2) Account on heroku.com
 3) Account on github.com
 
-### Steps
+##### Steps
 
 1) Create new PostrgeSQL database and fill it by create.sql from src.tar
 2) Copy files from src.tar to a new gihhub repo
@@ -79,10 +79,10 @@ We host our bot on heroku.com as web dyno, so:
   - click "choose events" and mark: *messages, messaging_postbacks, messaging_optins, message_deliveries, message_reads, messaging_payments, messaging_pre_checkouts,
     messaging_checkout_updates, messaging_account_linking, messaging_referrals, message_echoes, standby, messaging_policy_enforcement*
   - choose your Facebook Page below
-  - use https://\<your heroku app name\>.herokuapp.com/webhook as request url, and write any string in VERIFICATION_TOKEN field (but remember it)
+  - use https://YOUR-HEROKU-APP-NAME.herokuapp.com/webhook as request url, and write any string in VERIFICATION_TOKEN field (but remember it)
 8) Heroku deploy
-  - open https://dashboard.heroku.com/apps/<your heroku app name>/settings -> Config vars and define *DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER, SERVER_URL (https://<your heroku app name>.herokuapp.com), VERIFICATION_TOKEN (from Facebook setup step), PAGE_ACCESS_TOKEN (go back to the Facebook App Dashboard, select Settings under PRODUCTS → Messenger, and select Environment in the Token Generation section under Page)*
-  - enable Automatic deploys on https://dashboard.heroku.com/apps/\<your heroku app name\>/deploy/github
+  - open https://dashboard.heroku.com/apps/YOUR-HEROKU-APP-NAME/settings -> Config vars and define: *DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER, SERVER_URL* (https://YOUR-HEROKU-APP-NAME.herokuapp.com)*, VERIFICATION_TOKEN* (from Facebook setup step)*, PAGE_ACCESS_TOKEN* (go back to the Facebook App Dashboard, select Settings under PRODUCTS → Messenger, and select Environment in the Token Generation section under Page)
+  - enable Automatic deploys on https://dashboard.heroku.com/apps/YOUR-HEROKU-APP-NAME/deploy/github
   
 # Authors
 
